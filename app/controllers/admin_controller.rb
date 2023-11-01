@@ -5,6 +5,6 @@ class AdminController < ApplicationController
   before_action :must_be_an_admin
 
   def must_be_an_admin
-    redirect_to '/', alert: "Vous ne passerez pas!" unless current_user.is_admin?
+    redirect_to '/' unless current_user.is_admin?
   end
 end
