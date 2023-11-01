@@ -6,7 +6,12 @@
 
 <body style="padding:4px;text-align:center;">
     <h1> List of all businesses </h1>
-    <%= link_to "My menus", mesmenus_path %>
+
+    <% if current_user.is_admin %>
+        <%= link_to "ADMIN MODE", admin_path %>
+    <% else %>
+        <%= link_to "My menus", mesmenus_path %>
+    <% end %>
     <hr/>
 
     <% for business in @businesses %>
