@@ -7,7 +7,7 @@
 <body style="padding:4px;text-align:center;">
     <h1> List of all businesses </h1>
 
-    <% if current_user.is_admin? %>
+    <% if current_user && current_user.is_admin? %>
         <%= link_to "ADMIN MODE", admin_path %>
     <% else %>
         <%= link_to "My menus", mesmenus_path %>
