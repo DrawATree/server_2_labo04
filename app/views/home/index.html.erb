@@ -9,7 +9,7 @@
 
     <% if current_user && current_user.is_admin? %>
         <%= link_to "ADMIN MODE", admin_path %>
-    <% else %>
+    <% else if current_user %>
         <%= link_to "My menus", mesmenus_path %>
     <% end %>
     <hr/>

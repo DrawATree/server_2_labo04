@@ -1,4 +1,5 @@
 # Malyk Ratelle, le 18 octobre 2023
+# Modifié le 1 novembre 2023 par Malyk Ratelle
 
 Rails.application.routes.draw do
   devise_for :users
