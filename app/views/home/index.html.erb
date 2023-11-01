@@ -1,0 +1,20 @@
+<%
+=begin%>
+ Malyk Ratelle, le 18 octobre 2023  
+<%
+=end%>
+
+<body style="padding:4px;text-align:center;">
+    <h1> List of all businesses </h1>
+    <%= link_to "My menus", mesmenus_path %>
+    <hr/>
+
+    <% for business in @businesses %>
+
+        <h4 style="padding:2px;">
+            <%= link_to business.name, business_path(business.id) %>
+        </h4>
+
+        <hr width=25% />
+    <% end %>
+</body>

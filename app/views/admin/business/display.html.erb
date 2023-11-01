@@ -1,0 +1,64 @@
+<%
+=begin%>
+ Malyk Ratelle, le 18 octobre 2023  
+<%
+=end%>
+
+<body style="margin:2%;padding-bottom:16px">
+
+    <%= link_to 'GoBack', admin_path %>
+    
+    <b>business ADMIN</b>
+        
+    <h1>
+        <%= @business.name %> 
+    </h1>
+
+    <hr />
+    <h3>Menus</h3>
+    <ul>
+        <% for menuType in @business.menus %>
+
+            <li style="list-style-type:square">
+                <span style="font-weight:bold;">
+                    <%= menuType.title %>
+                </span>
+            </li>
+
+            <ul>
+            <% for menu in menuType.menus %>
+                <br />
+
+                <li style="list-style-type:disc">
+                    <span style="font-weight:bold;">
+                        <%= menu.title %>
+                    </span>
+                    : 
+                </li>
+
+                <ul>
+
+                <% for menuItem in menu.items %>
+                    <br />
+
+                    <li style="list-style-type:circle"> 
+                        <span style="font-weight:bold;">
+                            <%= menuItem.name %>
+                        </span>
+                        <span style="margin-left:8px;text-decoration:underline">
+                            <%= menuItem.price %>$
+                        </span>
+                    </li>
+
+                    <div style="margin:4px;">
+                        <%= menuItem.description %>
+                    </div>
+                <% end %>
+                </ul>
+
+            <% end %>
+            </ul>
+        <% end %>
+    </ul>
+    <%= link_to 'GoBack', admin_path %>
+</body>
